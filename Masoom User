@@ -1,0 +1,20 @@
+from selenium import webdriver
+
+# Set up the webdriver
+driver = webdriver.Chrome("path/to/chromedriver")
+
+# Navigate to the Instagram sign-up page
+driver.get("https://www.instagram.com/accounts/emailsignup/")
+
+# Enter the username and password
+username_input = driver.find_element_by_name("emailOrPhone")
+password_input = driver.find_element_by_name("password")
+username_input.send_keys("new_username")
+password_input.send_keys("new_password")
+
+# Click the sign-up button
+sign_up_button = driver.find_element_by_xpath("//button[@type='submit']")
+sign_up_button.click()
+
+# Close the webdriver
+driver.quit()
